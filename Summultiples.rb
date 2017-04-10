@@ -1,23 +1,20 @@
-
-class Summultiples
- def three_five
-    three_five = Array.new
-    numbers = Array(1..999)
+=begin
+Program to find multiples of 3 & 5
+=end
+class SumMultiple
+ def upto(limit, conditions = [])
+    valid_multiples = Array.new
+    numbers = Array(1..limit)
     for i in numbers
-      if i%3 == 0 or i%5 == 0
-      three_five.push(i)
+      for cond in conditions
+        if i%cond == 0
+        valid_multiples.push(i)
+        end
       end
     end
-    three_five
-  end
-  def sum(three_five)
-    res = 0
-    three_five.each { |i| res+= i }
-    puts(res)
+    return valid_multiples
   end
 end
 
-s = Summultiples.new
-s.sum(s.three_five)
-
-# >> 233168
+s = SumMultiple.new
+print s.upto(100,[3,5]).inject(&:+)
