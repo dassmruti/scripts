@@ -1,9 +1,9 @@
 class Evenodd
   def self.check(num)
     if(num%2==0)
-    puts "  "+num.to_s+ "is even"+"\n"
+    return "#{num} is even."
     else
-    puts "  "+num.to_s+ " is odd"+"\n"
+    return "#{num} is odd."
     end
   end
 end
