@@ -1,13 +1,8 @@
 class Evenodd
   def self.check(num)
-    if(num%2==0)
-    return "#{num} is even."
-    else
-    return "#{num} is odd."
-    end
+    return num%2 ==0 ? "#{num} is even." : "#{num} is odd."
   end
 end
-puts Evenodd.check(9)
+puts Evenodd.check(12)
 
-# >>   9 is odd
-# >>
+# >> 12 is even.

@@ -1,5 +1,9 @@
+=begin
+include module => instance methods
+extend module => class methods
+=end
 module Trignometry
-  ABC = 0
+ ABC = 90
 
  def sin x
    return Math.sin(x)
@@ -10,4 +14,23 @@ module Trignometry
  end
 end
 
-puts Trignometry::ABC
+class Computation
+  extend Trignometry
+end
+
+
+class Array
+  include Enumerable
+
+end
+
+class Hash
+
+end
+
+puts  [3,4].each
+a = {"name" => "SCY"}
+puts a.each
+
+# >> #<Enumerator:0x007f941b1293f8>
+# >> #<Enumerator:0x007f941b128fe8>
