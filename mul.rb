@@ -2,6 +2,7 @@
 Create a multiplication table
 =end
 class Multiplication
+  @@count 
   def self.table_for(table_num,limit)
     multiiplied_arr = Array.new
     (1..limit).to_a.each do |num|
