@@ -1,14 +1,17 @@
+=begin
+WAP to sort in a Asc and Desc order
+=end
 class Sorting
 
-  def self.sort(arr, sort_order)
+  def sort(arr, sort_order)
     n = arr.length
     (n-1).times do |i|
-      order(arr, sort_order)
+      order(arr, sort_order) # ~> NoMethodError: undefined method `order' for Sorting:Class
     end
     return arr
   end
-
-  def self.order(arr, sort_order)
+private
+  def order(arr, sort_order)
     iterations = arr.length - 1
     iterations.times do |i|
       if sort_order == 'asc'
@@ -25,7 +28,13 @@ class Sorting
 end
 
 a = [100,0,8,1,25,25,3,4,34]
-print "The final asc arr is #{Sorting.sort(a, 'asc')}\n"
-puts  "The final desc arr is #{Sorting.sort(a, 'desc')}"
+print "The final asc arr is #{Sorting.new.sort(a, 'asc')}\n"
+print  "The final desc arr is #{Sorting.new.sort(a, 'desc')}"
 
-# >> The final asc arr is [0, 1, 3, 4, 8, 25, 25, 34, 100]The final desc arr is [100, 34, 25, 25, 8, 4, 3, 1, 0]
+# ~> NoMethodError
+# ~> undefined method `order' for Sorting:Class
+# ~>
+# ~> /Users/smrutisagarikadash/scripts/Sorting.rb:9:in `block in sort'
+# ~> /Users/smrutisagarikadash/scripts/Sorting.rb:8:in `times'
+# ~> /Users/smrutisagarikadash/scripts/Sorting.rb:8:in `sort'
+# ~> /Users/smrutisagarikadash/scripts/Sorting.rb:31:in `<main>'
