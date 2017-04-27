@@ -2,7 +2,7 @@
 ruby calculator.rb + 2 3 #=> 5
 ruby calculator.rb * 2 3 #=> 6
 =end
-require "pry"
+
 class Calculator
 
   def self.calculate(args)
@@ -10,7 +10,6 @@ class Calculator
       return "Please pass atleast 3 arguments followed by a +/-/*"
     end
     operator = args[0]
-    binding.pry
     case operator
       when "+"
         return args[1..-1].map(&:to_i).inject(:+)
